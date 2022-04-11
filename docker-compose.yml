@@ -1,0 +1,10 @@
+version: '3'
+services:
+  q:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: qsharp-train:v1
+    tty: true
+    volumes:
+      - ./src:/app

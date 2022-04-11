@@ -1,0 +1,3 @@
+FROM mcr.microsoft.com/quantum/iqsharp-base:latest
+
+WORKDIR /app
