@@ -101,9 +101,10 @@
         Message($"UserTypeFunc(): {original} {original::Data}");
     }
 
-    function UsetType2Func(): Unit {
+    function UserType2Func(): Unit {
         mutable original = NonNamedType(1.1, (5, 5, "STRING"), 5);
-        Message($"UsetType2Func(): {original}");
+        let (head, _, tail) = original!;
+        Message($"UserType2Func(): {head}");
     }
 
     @EntryPoint()
@@ -117,6 +118,7 @@
         TupleFunc();
         UpdateVariableFunc();
         UserTypeFunc();
+        UserType2Func();
     }
 }
 
