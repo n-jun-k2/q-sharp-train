@@ -5,4 +5,4 @@ project/%:
 	@docker-compose run --rm q dotnet new $(*D) -lang Q# -o $(@F)
 
 run/%:
-	@docker-compose run --rm q dotnet run --project $(@F)
+	@docker-compose run --rm q dotnet run --project $(@F) --configuration $(*D)
