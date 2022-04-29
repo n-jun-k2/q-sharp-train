@@ -78,12 +78,15 @@ The template "xUnit Test Project" was created successfully.
 
 ```powershell
 # <project name>はsrc/配下のディレクトリ名です。
-PS C:\q-sharp-train> make run/<project name>
+# <configuration>はDebug or Releaseです。
+PS C:\q-sharp-train> make run/<configuration>/<project name>
 ```
 
 ##### 使用例
 ```powershell
-PS C:\q-sharp-train> make run/sample
+PS C:\q-sharp-train> make run/Debug/sample
+Hello quantum world!
+PS C:\q-sharp-train> make run/Release/sample
 Hello quantum world!
 ```
 
@@ -112,3 +115,7 @@ Quantum Application Honeywell  azq-honeywell  Q#        Common/Console
 Quantum Application IonQ       azq-ionq       Q#        Common/Console
 xUnit Test Project             xunit          Q#        Test/xUnit
 ```
+
+# Docker image
+
+Q#のdocker imageのtagリストは[こちら](https://mcr.microsoft.com/v2/quantum/iqsharp-base/tags/list)
