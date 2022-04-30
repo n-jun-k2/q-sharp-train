@@ -19,3 +19,20 @@
 | User Defined Types | ユーザー定義型の定義リテラルです。コンストラクタを呼び出しインスタンス化したものをユーザー定義型と定義。 | all items are set to default values |
 | Operation | このリテラルは値として定義できません。グローバルスコープ宣言する必要があり、部分適用を使ってローカルに構築する事ができる。 | invalid operation |
 | Function | このリテラルはグローバルスコープで宣言する必要があり、新しいFunctionは部分適用を使用してローカルに構築する事が出来ます。 | invalid operation |
+
+
+## 変数の宣言と再代入
+
+要約：
+- ``let``:再割り当て不可能な変数宣言
+- ``mutable``:再割り当て可能な変数宣言
+- ``set``:再割り当てのステートメント
+
+```q#
+let var1 = 3; 
+mutable var2 = 3; 
+set var2 = var2 + 1; 
+
+# array or NameType
+set arr w/= index <- value
+```
