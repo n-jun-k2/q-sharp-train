@@ -2,6 +2,7 @@
 
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Arrays;
 
     /// # Summary
     /// 例外排出する為の練習
@@ -64,6 +65,27 @@
         }
     }
 
+    /// # Summary
+    /// 単なるループ
+    /// 
+    /// # Input
+    /// ## arr (Int[]): 整数型の配列
+    /// 
+    function F4(arr: Int[]) : Unit {
+        for item in arr {
+            Message($"F4 : {item}");
+        }
+
+        for item in 0..Length(arr) - 1 {
+            Message($"F4 : {arr[item]}");
+        }
+
+        // IndexRange <- open Microsoft.Quantum.Arrays;
+        for item in IndexRange(arr) {
+            Message($"F4 : {arr[item]}");
+        }
+    }
+
     @EntryPoint()
     operation Main() : Unit {
         F(10);
@@ -72,6 +94,8 @@
         F3([1, 2, 3]);
         F3([-1, -2, -3]);
         F3([]);
+
+        F4([1, 2, 13]);
     }
 }
 
