@@ -43,10 +43,11 @@
         repeat {
             Message($"repeat {c}");
             set c -= 1;
+            let d = 10;
         }
-        until c < 1
+        until c < 1 and d == 10
         fixup {
-            Message("fixup");
+            Message($"fixup {c} d = {d}");
         }
     }
 

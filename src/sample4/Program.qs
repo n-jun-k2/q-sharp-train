@@ -3,6 +3,8 @@
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
 
+    open sample2;
+
     @EntryPoint()
     function Main() : Unit {
         let sum = (x) -> x + 10;
@@ -19,6 +21,14 @@
         Callback(x -> $"lambda message. value = {x}");
 
         Callback2(50, (x, y) -> $"{y} {x}");
+
+        let functorCallback2 = x -> Callback2(50, x);
+        functorCallback2((x, y)-> $"{y} bind functor!! {x} ");
+
+        Sample();
+
+        // let functorCallback3 = x => Callback3(2, x);
+        // functorCallback3(x -> $"{x}");
     }
 
     /// # Summary
@@ -51,6 +61,10 @@
     function Callback2 (type: Int, toStr: (Int, String) -> String) : Unit {
         let msgHead = "INFO:";
         Message(toStr(type, msgHead));
+    }
+
+    function Callback3 (x: Int, toStr: Int => String) : Unit {
+        
     }
 }
 
