@@ -1,10 +1,8 @@
 version: '3'
 services:
   q:
-    build:
-      context: .
-      dockerfile: ./docker/Dockerfile
-    image: qsharp-train:v1
-    tty: true
+    image: mcr.microsoft.com/quantum/iqsharp-base:0.24.210209-beta
+    working_dir: /app
+    tty: false
     volumes:
       - ./src:/app

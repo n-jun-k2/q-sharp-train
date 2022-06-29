@@ -6,3 +6,6 @@ project/%:
 
 run/%:
 	@docker-compose run --rm q dotnet run --project $(@F) --configuration $(*D)
+
+clean/%:
+	@docker-compose run --rm q dotnet clean $(@F) --configuration $(*D)
