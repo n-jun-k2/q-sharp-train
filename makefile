@@ -9,3 +9,6 @@ run/%:
 
 clean/%:
 	@docker-compose run --rm q dotnet clean $(@F) --configuration $(*D)
+
+test/%:
+	@docker-compose run --rm q /bin/bash -c "cd $(@F) && dotnet restore && dotnet test"
