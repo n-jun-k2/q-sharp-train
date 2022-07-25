@@ -1,7 +1,7 @@
 version: '3'
 services:
   q:
-    image: mcr.microsoft.com/quantum/iqsharp-base:0.24.210209-beta
+    image: mcr.microsoft.com/quantum/iqsharp-base:0.25.218240
     working_dir: /app
     tty: false
     volumes:

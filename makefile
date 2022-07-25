@@ -12,3 +12,12 @@ clean/%:
 
 test/%:
 	@docker-compose run --rm q /bin/bash -c "cd $(@F) && dotnet restore && dotnet test"
+
+restore/%:
+	@docker-compose run --rm q /bin/bash -c "cd $(@F) && dotnet restore"
+
+add/%:
+	docker-compose run --rm q dotnet add $(*D) package $(@F)
+
+clear:
+	docker-compsoe run --rm q dotnet nuget locals all --clear
